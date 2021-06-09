@@ -44,6 +44,12 @@
   font-style: normal;
 }
 
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -77,6 +83,7 @@ p {
 .contact-link {
   text-decoration: none;
   color: #212121;
+  padding: 10px 0;
 }
 
 .site-nav-link:hover,
@@ -137,12 +144,16 @@ p {
   margin-left: 50px;
 }
 
+.header {
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid #ececec;
+}
+
 .container.flex-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  border-bottom: 1px solid #ececec;
 }
 
 .icon-nav {
@@ -177,6 +188,7 @@ p {
 }
 
 .button.primary {
+  border: transparent;
   display: block;
   margin: 0 auto;
   color: white;
@@ -195,10 +207,8 @@ p {
 
 .icon-features {
   display: flex;
-  width: 100%;
-  height: 120px;
+  padding: 25px 0;
   justify-content: center;
-  align-items: center;
   background-color: var(--backgrey-color);
   border-radius: 4px;
   margin-bottom: 30px;
@@ -255,27 +265,28 @@ p {
 
 .social-links {
   display: flex;
-  justify-content: center;
   justify-content: space-between;
-  padding: 0 32px 30px;
-  margin-top: 16px;
-  fill: currentColor;
 }
 
 .team-icons {
-  display: flex;
-  width: 44px;
-  height: 44px;
   border-radius: 50%;
-  align-items: center;
-  justify-content: center;
 }
 
-.team-icons:focus,
-.team-icons:hover {
+.team-icons.link {
+  padding: 12px;
+  display: block;
+  fill: var(--icon-color);
+}
+
+.team-icons.link:hover {
   background-color: var(--pretty-color);
-  color: var(--white-color);
+  fill: var(--white-color);
   cursor: pointer;
+}
+
+.team-icons.link:focus {
+  background-color: var(--pretty-color);
+  fill: var(--white-color);
 }
 
 .section.team {
@@ -284,8 +295,6 @@ p {
 
 .team-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .team-worker {
@@ -324,37 +333,37 @@ p {
   line-height: 1.18;
   letter-spacing: 0.03em;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .member-style {
-  padding-top: 30px;
+  padding: 30px 32px;
 }
 
 /* СЕКЦИЯ КЛИЕНТЫ */
 
 .partners-list {
   display: flex;
-  justify-content: center;
   justify-content: space-between;
 }
 
 .partner {
   display: flex;
-  width: 170px;
-  height: 92px;
+}
+
+.partner-link {
+  padding: 16px 32px;
   fill: var(--icon-color);
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
 }
 
-.partner:hover,
-.partner:focus {
+.partner-link:hover,
+.partner-link:focus {
   cursor: pointer;
   fill: var(--pretty-color);
   color: var(--pretty-color);
+  border-color: var(--pretty-color);
 }
 
 /*FOOTER*/
@@ -418,30 +427,31 @@ p {
 }
 
 .join-icons {
-  width: 206px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 .join-icon {
   display: flex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
+}
+
+.join-link {
+  padding: 12px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+}
+
+.join-icon:not(:last-child) {
+  margin-right: 10px;
 }
 
 .join-svg {
   fill: var(--white-color);
 }
 
-.join-icon:focus,
-.join-icon:hover {
+.join-link:focus,
+.join-link:hover {
   cursor: pointer;
   background-color: var(--pretty-color);
 }
@@ -455,6 +465,12 @@ p {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--white-color);
+  margin-bottom: 20px;
+}
+
+.footer.link:hover,
+.footer.link:focus {
+  color: var(--pretty-color);
 }
 /*ПОРТФОЛИО*/
 
@@ -498,6 +514,8 @@ p {
 .button.secondary:focus {
   background-color: var(--pretty-color);
   color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .projects-title {
@@ -517,21 +535,14 @@ p {
 .portfolio {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -30px;
-  margin-top: -30px;
+  margin: -15px;
 }
 
 .portfolio-list {
-  flex-basis: calc(100% / 3 -30px);
-  margin-right: 30px;
-  margin-top: 30px;
+  flex-basis: auto;
+  margin: 15px;
   background-color: var(--white-color);
-  border: 1px solid #eeeeee;
   box-sizing: border-box;
-}
-
-.portfolio-list:nth-child(3n) {
-  margin-right: 0;
 }
 
 .portfolio-list:hover,
@@ -543,4 +554,5 @@ p {
 
 .projects-item {
   padding: 20px 24px;
+  border: 1px solid #eeeeee;
 }
