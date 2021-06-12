@@ -274,7 +274,6 @@ p {
 
 .team-icons.link {
   padding: 12px;
-  display: block;
   fill: var(--icon-color);
 }
 
@@ -539,7 +538,7 @@ p {
 }
 
 .portfolio-list {
-  flex-basis: auto;
+  flex-basis: calc((100% - 90px) / 3);
   margin: 15px;
   background-color: var(--white-color);
   box-sizing: border-box;
